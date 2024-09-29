@@ -1,11 +1,12 @@
-import { Usuario } from "../../../Modelos/Usuario";
+import { FunctionComponent } from "react";
+import { Usuario } from "../../Modelos/Usuario";
 
-type Params = {
-  usuario?:Usuario,
-  onEditar: (usuario:Usuario)=>void,
-  onCerrar: ()=>void
+type UsuarioDetallesParams = {
+  usuario?: Usuario,
+  onEditar: (usuario: Usuario) => void,
+  onCerrar: () => void
 }
-const UsuarioDetalles = ({usuario, onEditar, onCerrar}: Params): JSX.Element => {
+const UsuarioDetalles: FunctionComponent<UsuarioDetallesParams> = ({ usuario, onEditar, onCerrar }): JSX.Element => {
   console.warn('UsuarioDetalles');
   if (usuario) {
     return (

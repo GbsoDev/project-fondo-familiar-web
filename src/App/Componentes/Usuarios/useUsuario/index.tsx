@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { usuarioReducer, initialState, actionTypes, modalTypes } from './usuarioReducer';
 import { Usuario } from '../../../Modelos/Usuario';
 import { UsuariosService } from '../../../Servicios/UsuariosService';
@@ -15,12 +15,13 @@ function useUsuario() {
     error,
     modalType,
   } = estado;
+
   React.useEffect(() => {
     if (usuarios.length === 0) {
       usuarioService.inicializarDatos();
       usuarioService.listarUsuarios().then(usuarios => {
         onExitoProceso(usuarios);
-      }).catch((error: unknown) => {
+      }).catch((error) => {
         procesarError(error);
       });
     }

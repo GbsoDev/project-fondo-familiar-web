@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { FunctionComponent, ReactNode } from 'react';
 import ReactDOM from 'react-dom';
 import './Modal.css';
 
@@ -6,7 +6,7 @@ interface ModalParams {
   children: ReactNode;
 }
 
-function Modal({ children }: ModalParams) {
+const Modal: FunctionComponent<ModalParams> = ({ children }) => {
   const modalContainer = document.getElementById('modalContainer');
 
   if (!modalContainer) {

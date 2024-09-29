@@ -1,32 +1,29 @@
-import { NavLink } from "react-router-dom";
+import { Menubar } from "primereact/menubar";
+import { FunctionComponent } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Menu() {
-  const routes = [
+const Menu: FunctionComponent = () => {
+  const navigate = useNavigate();
+
+  const items = [
     {
-      to: '/',
-      text: 'Home'
+      label: 'Home',
+      icon: 'pi pi-palette',
+      command: () => {
+        navigate('/');
+      }
     },
     {
-      to: '/usuarios',
-      text: 'Usuarios'
-    },
+      label: 'Usuarios',
+      icon: 'pi pi-palette',
+      command: () => {
+        navigate('/usuarios');
+      }
+    }
   ];
 
   return (
-    <nav>
-      <ul>
-        {routes.map(route => (
-          <li key={route.to}>
-            <NavLink
-              style={({ isActive }) => ({
-                color: isActive ? 'green' : 'blue',
-              })}
-              to={route.to}
-            >{route.text}</NavLink>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <Menubar model={items}></Menubar>
   );
 }
 
