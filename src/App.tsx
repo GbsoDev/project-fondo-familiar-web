@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home } from './App/Componentes/Home';
 import { Menu } from './App/Componentes/Menu';
 import { UsuariosLista } from './App/Componentes/Usuarios/UsuariosLista';
+import 'primeicons/primeicons.css';
 
 function App() {
   return (
